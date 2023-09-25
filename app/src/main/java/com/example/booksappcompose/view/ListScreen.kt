@@ -1,30 +1,37 @@
 package com.example.booksappcompose.view
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Button
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.example.booksappcompose.nav.Screen
+import com.example.booksappcompose.viewmodels.ListScreenViewModel
 
 @Composable
 fun ListScreen( navController: NavController) {
 
 
-     Column(modifier = Modifier.fillMaxSize()) {
-
-         Button(onClick = {
-
-             navController.navigate(Screen.DetailScreen.route)
+    // init viewmodel
+      val listScreenViewModel:ListScreenViewModel= hiltViewModel()
 
 
+    // collect state
 
-         }) {
+    val bookList by listScreenViewModel.bookList.collectAsState()
+
+     // call viewmodel
+
+    listScreenViewModel.getBooks()
+    
+    
+    BooksList(bookList = bookList.result)
 
 
 
-         }
-     }
+
+
+
+
+
 
 }

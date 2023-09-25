@@ -1,5 +1,6 @@
 package com.example.booksappcompose.data.api
 
+import com.example.booksappcompose.data.Book
 import com.example.booksappcompose.data.BookList
 import retrofit2.Response
 import retrofit2.http.GET

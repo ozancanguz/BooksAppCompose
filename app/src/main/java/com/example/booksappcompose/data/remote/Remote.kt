@@ -1,5 +1,6 @@
 package com.example.booksappcompose.data.remote
 
+import com.example.booksappcompose.data.Book
 import com.example.booksappcompose.data.BookList
 import com.example.booksappcompose.data.api.BooksApi
 import retrofit2.Response
